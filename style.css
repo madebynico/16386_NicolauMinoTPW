@@ -1,0 +1,230 @@
+
+body {
+margin: 0;
+font-family: 'Inter', sans-serif;
+background: #f0f6fb;
+color: #1b2b40;
+line-height: 1.6;
+}
+
+/*HEADER*/
+
+
+
+header {
+position: relative;
+height: 90vh;
+background: linear-gradient(rgba(0,50,100,0.6), rgba(0,50,100,0.6)), url('../images/lisbon-cityscape-1748835854.avif') center/cover no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+text-align: center;
+flex-direction: column;
+padding: 0 20px;
+}
+
+header .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0;background: rgba(0, 40, 80, 0.3); }
+
+header .content { position: relative; z-index: 2;max-width: 800px; }
+
+header h1 { font-size: 4rem;margin-bottom: 0.2em; text-shadow: 0 3px 10px rgba(0,0,0,0.4); }
+
+header p { font-size: 2em;margin-bottom: 1.5em; }
+
+
+
+/*BOTÃO DE INSCRIÇÃO*/
+
+.btn {
+background: #0a84ff;
+color: #fff;
+padding: 18px 40px;
+border-radius: 10px;
+text-decoration: none;
+font-weight: bold;
+font-size: 1.2em;
+display: inline-block;
+transition: all 0.3s ease;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn:hover { background: #0066cc; transform: translateY(10px); }
+
+/*SECÇÕES */
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+}
+section h2 {
+  text-align: center;
+ font-size: 2em;
+ color: #1b2b40;
+}
+
+.iniciativa p {
+  text-align: center;
+}
+
+/*LOCAIS*/
+
+.roteiro-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.roteiro-item {
+  flex: 1 1 calc(33% - 30px);
+  background: #f8fbff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roteiro-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.roteiro-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.roteiro-item h3 {
+  color: #0a4b78;
+  font-size: 1.5em;
+  margin: 16px 0 8px;
+}
+
+.roteiro-item p {
+  padding: 0 20px 20px;
+  color: #2e3a48;
+  font-size: 1em;
+}
+
+@media (max-width: 900px) {
+  .roteiro-item {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .roteiro-item {
+    flex: 1 1 100%;
+  }
+  .roteiro-item img {
+    height: 200px;
+  }
+}
+
+
+/*MAPA*/
+
+section .mapa h3{
+ text-align: center;
+ font-size: 2em;
+ color: #1b2b40;
+}
+
+section#roteiro .mapa { margin-top: 40px; }
+
+/*INSCRIÇÃO*/
+
+form input, form textarea {
+width: 90%;
+padding: 12px;
+margin: 8px 5px 5px ;
+border: 1px solid #bcd0e6;
+border-radius: 6px;
+font-size: 1em;
+}
+form button {
+background: #0a84ff;
+color: #fff;
+border: none;
+padding: 14px 28px;
+border-radius: 6px;
+cursor: pointer;
+font-size: 1em;
+font-weight: bold;
+transition: background 0.3s ease;
+}
+form button:hover { background: #0066cc; }
+
+
+/*FOOTER*/
+
+footer {
+background: #0a4b78;
+color: #fff;
+text-align: center;
+padding: 30px 20px;
+font-size: 0.9em;
+}
+
+footer a { color: #aee3ff; text-decoration: none; }
+
+footer a:hover { text-decoration: underline; }
+
+
+.fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+header h1 { font-size: 2.5rem; }
+.btn { font-size: 1em; padding: 14px 30px; }
+section { padding: 40px 16px; }
+}
+
+
+
+
+/*MOVIMENTO DE TEXTO*/
+.text-marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(0, 80, 160, 0.9);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  z-index: 20;
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollText 20s linear infinite;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/*ADAPTAÇÃO PARA TELAS PEQUENAS*/
+@media (max-width: 600px) {
+  .text-marquee {
+    font-size: 0.85rem;
+  }
+}
